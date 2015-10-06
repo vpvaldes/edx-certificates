@@ -189,6 +189,19 @@ def main():
             }),
         }
         log.info("Posting result to the LMS: {0}".format(xqueue_reply))
+        try:
+            with open('/edx/var/certs/constancias_generadas/constancias_curso_'+course_id.replace('/','_'), 'a+') as file:
+                file.write('%s,%s,%s,%s \n' % (username,download_uuid,verify_uuid,download_url))
+                file.close()
+            log.info("Save data into backup file: {status}".format(status = '/edx/var/certs/constancias_generadas/constancias_curso_'+course_id.replace('/','_')))
+
+        except Exception as e:
+            log.critical(
+                'Backup certificate data: An error occurred during certificate generation {reason}'.format(
+                    reason=e,
+                )
+            )
+
         manager.respond(xqueue_reply)
 
 
