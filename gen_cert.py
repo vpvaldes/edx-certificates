@@ -476,7 +476,7 @@ class CertificateGen(object):
 
         #paragraph_string = "Issued {0}".format(self.issued_date)
         #paragraph_string = "{0}".format(self.issued_date)
-        paragraph_string = "Santiago  de Chile, a 31 de mayo de 2016".format(self.issued_date)
+        paragraph_string = "Santiago de Chile, a 2 de junio de 2016 ".format(self.issued_date)
 
         # Right justified so we compute the width
         width = stringWidth(
