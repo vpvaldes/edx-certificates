@@ -639,7 +639,7 @@ class CertificateGen(object):
         #                   "<b>{1}</b> through <b>edX</b>.".format(
         #                       self.org, self.long_org.decode('utf-8'))
 
-        paragraph_string = "realizado entre el 19 de abril de 2015 y el 30 de mayo de 2015<br/><br/>" \
+        paragraph_string = "realizado entre el 19 de abril de 2016 y el 31 de mayo de 2016<br/><br/>" \
                            "en la plataforma UAbierta de la Universidad de Chile".format(
                                self.org, self.long_org.decode('utf-8'))
 
