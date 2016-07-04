@@ -577,44 +577,44 @@ class CertificateGen(object):
 
         # styleOpenSans.fontName = 'OpenSans-BoldItalic'
         if 'PH207x' in self.course:
-            styleOpenSans.fontSize = 19
+            styleOpenSans.fontSize = 20
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 21
+            styleOpenSans.leading = 19
         elif '4.01x' in self.course:
-            styleOpenSans.fontSize = 19
+            styleOpenSans.fontSize = 20
             #styleOpenSans.fontSize = 20
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 21
+            styleOpenSans.leading = 19
         elif 'Stat2.1x' in self.course:
-            styleOpenSans.fontSize = 19
+            styleOpenSans.fontSize = 20
             #styleOpenSans.fontSize = 20
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 21
+            styleOpenSans.leading = 19
         elif 'CS191x' in self.course:
-            styleOpenSans.fontSize = 19
+            styleOpenSans.fontSize = 20
             #styleOpenSans.fontSize = 20
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 21
+            styleOpenSans.leading = 19
         elif '6.00x' in self.course:
-            styleOpenSans.fontSize = 19
+            styleOpenSans.fontSize = 20
             #styleOpenSans.fontSize = 20
-            styleOpenSans.leading = 21
+            styleOpenSans.leading = 19
             #styleOpenSans.leading = 10
         elif 'PH278x' in self.course:
-            styleOpenSans.fontSize = 19
+            styleOpenSans.fontSize = 20
             #styleOpenSans.fontSize = 20
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 21
+            styleOpenSans.leading = 19
         else:
-            styleOpenSans.fontSize = 18
+            styleOpenSans.fontSize = 20
             #styleOpenSans.fontSize = 24
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 21
+            styleOpenSans.leading = 19
         styleOpenSans.textColor = colors.Color(
             0, 0.624, 0.886)
         styleOpenSans.alignment = TA_CENTER
         #styleOpenSans.leading = 10
-        styleOpenSans.leading = 21
+        styleOpenSans.leading = 19
 
         #paragraph_string = u"<b style='line-height: 2'><i>{0}: {1}</i></b>".format(
         #    self.course, self.long_course.decode('utf-8'))
