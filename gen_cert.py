@@ -102,7 +102,6 @@ def prettify_isodate(isoformat_date):
 
 def get_cert_date(calling_date_parameter, configured_date_parameter):
     """Get pertinent date for display on cert
-
     - If cert passes a set date in 'calling_date_parameter', format that
     - If using the "ROLLING" certs feature, use today's date
     - If all else fails use 'configured_date_parameter' for date
@@ -122,12 +121,10 @@ def get_cert_date(calling_date_parameter, configured_date_parameter):
 
 def font_for_string(fontlist, ustring):
     """Determine the best font to render a string.
-
     Given a list of fonts in priority order (that is, prettiest-first) and a
     string which may or may not contain Unicode characters, test the string's
     codepoints for glyph entries in the font, failing if any are missing and
     returning the font name if it succeeds.
-
     Font list a list of tuples where the first two items are the
     human-readable font name, the on-disk filename, and one or more ignored
     fields, e.g.:
@@ -163,7 +160,6 @@ def font_for_string(fontlist, ustring):
 
 def autoscale_text(page, string, max_fontsize, max_leading, max_height, max_width, style):
     """Calculate font size and text placement given some base values
-
     These values passed by reference are modified in this function, and not passed back:
         - style.fontSize
         - style.leading
@@ -191,9 +187,7 @@ class CertificateGen(object):
     def __init__(self, course_id, template_pdf=None, aws_id=None, aws_key=None,
                  dir_prefix=None, long_org=None, long_course=None, issued_date=None):
         """Load a pdf template and initialize
-
         Multiple certificates can be generated and uploaded for a single course.
-
         course_id    - Full course_id (ex: course-v1:MITx+6.00x+1T2015)
         course_name  - Human readable course title (ex: Introduction to Curling)
         dir_prefix   - Temporary directory for file generation. Ceritificates
@@ -203,7 +197,6 @@ class CertificateGen(object):
                        certificate generation.
         aws_id       - necessary for S3 uploads
         aws_key      - necessary for S3 uploads
-
         course_id is used to look up extra data from settings.CERT_DATA,
         including (but not necessarily limited to):
           * LONG_ORG     - long name for the organization
@@ -289,18 +282,13 @@ class CertificateGen(object):
         """
         name - Full name that will be on the certificate
         upload - Upload to S3 (defaults to True)
-
         set upload to False if you do not want to upload to S3,
         this will also keep temporary files that are created.
-
         returns a tuple containing the UUIDs for download, verify and
         the full download URL.  If upload is set to False
         download_url in the return will be None
-
         return (download_uuid, verify_uuid, download_url)
-
         verify_uuid will be None if there is no verification signature
-
         """
         download_uuid = None
         verify_uuid = None
@@ -369,7 +357,6 @@ class CertificateGen(object):
         designation=None,
     ):
         """Generate a certificate PDF, signature and validation html files.
-
         return (download_uuid, verify_uuid, download_url)
         """
         versionmap = {
@@ -476,7 +463,7 @@ class CertificateGen(object):
 
         #paragraph_string = "Issued {0}".format(self.issued_date)
         #paragraph_string = "{0}".format(self.issued_date)
-        paragraph_string = "Santiago de Chile, 7 de julio de 2016 ".format(self.issued_date)
+        paragraph_string = "Santiago de Chile, a 11 de agosto de 2016".format(self.issued_date)
 
         # Right justified so we compute the width
         width = stringWidth(
@@ -548,7 +535,7 @@ class CertificateGen(object):
         # Successfully completed
 
         styleOpenSansLight.fontSize = 12
-        styleOpenSansLight.leading = 8
+        styleOpenSansLight.leading = 10
         styleOpenSansLight.textColor = colors.Color(
             0.302, 0.306, 0.318)
         styleOpenSansLight.alignment = TA_CENTER
@@ -577,44 +564,35 @@ class CertificateGen(object):
 
         # styleOpenSans.fontName = 'OpenSans-BoldItalic'
         if 'PH207x' in self.course:
-            styleOpenSans.fontSize = 21
-            #styleOpenSans.leading = 10
-            styleOpenSans.leading = 18
+            styleOpenSans.fontSize = 18
+            styleOpenSans.leading = 21
         elif '4.01x' in self.course:
-            styleOpenSans.fontSize = 21
-            #styleOpenSans.fontSize = 20
+            styleOpenSans.fontSize = 20
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 18
+            styleOpenSans.leading = 21
         elif 'Stat2.1x' in self.course:
-            styleOpenSans.fontSize = 21
-            #styleOpenSans.fontSize = 20
+            styleOpenSans.fontSize = 20
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 18
+            styleOpenSans.leading = 21
         elif 'CS191x' in self.course:
-            styleOpenSans.fontSize = 21
-            #styleOpenSans.fontSize = 20
+            styleOpenSans.fontSize = 20
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 18
+            styleOpenSans.leading = 21
         elif '6.00x' in self.course:
-            styleOpenSans.fontSize = 21
-            #styleOpenSans.fontSize = 20
-            styleOpenSans.leading = 18
-            #styleOpenSans.leading = 10
+            styleOpenSans.fontSize = 20
+            styleOpenSans.leading = 21
         elif 'PH278x' in self.course:
-            styleOpenSans.fontSize = 21
-            #styleOpenSans.fontSize = 20
+            styleOpenSans.fontSize = 20
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 18
+            styleOpenSans.leading = 21
         else:
-            styleOpenSans.fontSize = 21
-            #styleOpenSans.fontSize = 24
+            styleOpenSans.fontSize = 24
             #styleOpenSans.leading = 10
-            styleOpenSans.leading = 18
+            styleOpenSans.leading = 21
         styleOpenSans.textColor = colors.Color(
             0, 0.624, 0.886)
         styleOpenSans.alignment = TA_CENTER
-        #styleOpenSans.leading = 10
-        styleOpenSans.leading = 18
+        styleOpenSans.leading = 21
 
         #paragraph_string = u"<b style='line-height: 2'><i>{0}: {1}</i></b>".format(
         #    self.course, self.long_course.decode('utf-8'))
@@ -648,7 +626,7 @@ class CertificateGen(object):
         #                   "<b>{1}</b> through <b>edX</b>.".format(
         #                       self.org, self.long_org.decode('utf-8'))
 
-        paragraph_string = "realizado entre el 31 de mayo y el 6 de julio de 2016<br/><br/>" \
+        paragraph_string = "realizado entre el 5 de julio y el 10 de agosto de 2016<br/><br/>" \
                            "en la plataforma UAbierta de la Universidad de Chile".format(
                                self.org, self.long_org.decode('utf-8'))
 
@@ -1159,7 +1137,6 @@ class CertificateGen(object):
         verification files including
         the static html files that will be seen when
         the user clicks the verification link.
-
         name - full name of the student
         filename - path on the local filesystem to the certificate pdf
         output_dir - where to write the verification files
@@ -1276,7 +1253,6 @@ class CertificateGen(object):
         """
         Crude method for determining whether or not a string contains
         characters we can't render nicely in particular fonts
-
         FIXME: methods using this should consider using font_for_string()
         instead.
         """
@@ -1319,12 +1295,10 @@ class CertificateGen(object):
         generate_date=None,
     ):
         """Generate a PDF certificate, signature and html files for validation.
-
         REQUIRED PARAMETERS:
         student_name  - specifies student name as it must appear on the cert.
         download_dir  -
         verify_dir    -
-
         OPTIONAL PARAMETERS:
         filename      - the filename to write out, i.e., 'Certificate.pdf'.
                         Defaults to settings.TARGET_FILENAME
@@ -1332,7 +1306,6 @@ class CertificateGen(object):
         generate_date - specifies an ISO formatted date (i.e., '2012-02-02')
                         with which to stamp the cert. Defaults to CERT_DATA's
                         ISSUED_DATE, or today's date for ROLLING.
-
         CONFIGURATION PARAMETERS:
             The following items are brought in from the cert-data.yml stanza for the
         current course:
@@ -1346,7 +1319,6 @@ class CertificateGen(object):
         TEMPLATEFILE - (optional) If given, the filename referred to by
                        TEMPLATEFILE will be used as the template over which
                        to render.
-
         RETURNS (download_uuid, verify_uuid, download_url)
         """
 
@@ -1543,12 +1515,10 @@ class CertificateGen(object):
         generate_date=None,
     ):
         """Generate a PDF certificate, signature and html files for validation.
-
         REQUIRED PARAMETERS:
         student_name  - specifies student name as it must appear on the cert.
         download_dir  -
         verify_dir    -
-
         OPTIONAL PARAMETERS:
         filename      - the filename to write out, i.e., 'Certificate.pdf'.
                         Defaults to settings.TARGET_FILENAME
@@ -1556,7 +1526,6 @@ class CertificateGen(object):
         generate_date - specifies an ISO formatted date (i.e., '2012-02-02')
                         with which to stamp the cert. Defaults to CERT_DATA's
                         ISSUED_DATE, or today's date for ROLLING.
-
         CONFIGURATION PARAMETERS:
         The following items are brought in from the cert-data.yml stanza for the
         current course:
@@ -1576,9 +1545,7 @@ class CertificateGen(object):
         TEMPLATEFILE - (optional) If given, the filename referred to by
                        TEMPLATEFILE will be used as the template over which
                        to render.
-
         RETURNS (download_uuid, verify_uuid, download_url)
-
         Note that CME certificates never generate verification URLs; the
         underlying template is expected to embed contact information for
         the relevant medical school.
@@ -1738,12 +1705,10 @@ class CertificateGen(object):
         generate_date=None,
     ):
         """Generate a PDF certificate, signature and html files for validation.
-
         REQUIRED PARAMETERS:
         student_name  - specifies student name as it must appear on the cert.
         download_dir  -
         verify_dir    -
-
         OPTIONAL PARAMETERS:
         filename      - the filename to write out, e.g., 'Statement.pdf'.
                         Defaults to settings.TARGET_FILENAME.
@@ -1751,7 +1716,6 @@ class CertificateGen(object):
         generate_date - specifies an ISO formatted date (i.e., '2012-02-02')
                         with which to stamp the cert. Defaults to CERT_DATA's
                         ISSUED_DATE, or today's date for ROLLING.
-
         CONFIGURATION PARAMETERS:
             The following items are brought in from the cert-data.yml stanza for the
         current course:
@@ -1767,7 +1731,6 @@ class CertificateGen(object):
         TEMPLATEFILE   - (optional) If given, the filename referred to by
                          TEMPLATEFILE will be used as the template over which
                          to render.
-
         RETURNS (download_uuid, verify_uuid, download_url)
         """
 
