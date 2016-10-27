@@ -562,33 +562,35 @@ class CertificateGen(object):
 
         # Course name
 
-        # styleOpenSans.fontName = 'OpenSans-BoldItalic'
-        if 'PH207x' in self.course:
-            styleOpenSans.fontSize = 18
-            styleOpenSans.leading = 21
-        elif '4.01x' in self.course:
-            styleOpenSans.fontSize = 18
-            styleOpenSans.leading = 10
-            #styleOpenSans.leading = 21
-        elif 'Stat2.1x' in self.course:
-            styleOpenSans.fontSize = 18
-            styleOpenSans.leading = 10
-            #styleOpenSans.leading = 21
-        elif 'CS191x' in self.course:
-            styleOpenSans.fontSize = 18
-            styleOpenSans.leading = 10
-            #styleOpenSans.leading = 21
-        elif '6.00x' in self.course:
-            styleOpenSans.fontSize = 18
-            styleOpenSans.leading = 21
-        elif 'PH278x' in self.course:
-            styleOpenSans.fontSize = 18
-            #styleOpenSans.leading = 10
-            styleOpenSans.leading = 21
-        else:
-            styleOpenSans.fontSize = 18
-            #styleOpenSans.leading = 10
-            styleOpenSans.leading = 21
+# styleOpenSans.fontName = 'OpenSans-BoldItalic'
+#        if 'PH207x' in self.course:
+#            styleOpenSans.fontSize = 18
+#            styleOpenSans.leading = 21
+#        elif '4.01x' in self.course:
+#            styleOpenSans.fontSize = 20
+#            #styleOpenSans.leading = 10
+#            styleOpenSans.leading = 21
+#        elif 'Stat2.1x' in self.course:
+#            styleOpenSans.fontSize = 20
+#            #styleOpenSans.leading = 10
+#            styleOpenSans.leading = 21
+#        elif 'CS191x' in self.course:
+#            styleOpenSans.fontSize = 20
+#            #styleOpenSans.leading = 10
+#            styleOpenSans.leading = 21
+#        elif '6.00x' in self.course:
+#            styleOpenSans.fontSize = 20
+#            styleOpenSans.leading = 21
+#        elif 'PH278x' in self.course:
+#            styleOpenSans.fontSize = 20
+#            #styleOpenSans.leading = 10
+#            styleOpenSans.leading = 21
+#        else:
+#            styleOpenSans.fontSize = 24
+#            #styleOpenSans.leading = 10
+#            styleOpenSans.leading = 21
+        styleOpenSans.fontSize = 18   
+        styleOpenSans.leading = 10    
         styleOpenSans.textColor = colors.Color(
             0, 0.624, 0.886)
         styleOpenSans.alignment = TA_CENTER
