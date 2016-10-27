@@ -589,8 +589,8 @@ class CertificateGen(object):
 #            styleOpenSans.fontSize = 24
 #            #styleOpenSans.leading = 10
 #            styleOpenSans.leading = 21
-        styleOpenSans.fontSize = 18   
-        styleOpenSans.leading = 10    
+        styleOpenSans.fontSize = 19   
+        styleOpenSans.leading = 21    
         styleOpenSans.textColor = colors.Color(
             0, 0.624, 0.886)
         styleOpenSans.alignment = TA_CENTER
