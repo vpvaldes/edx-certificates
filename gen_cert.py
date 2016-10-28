@@ -589,11 +589,11 @@ class CertificateGen(object):
 #            styleOpenSans.fontSize = 24
 #            #styleOpenSans.leading = 10
 #            styleOpenSans.leading = 21
-        styleOpenSans.fontSize = 19      
+        styleOpenSans.fontSize = 17      
         styleOpenSans.textColor = colors.Color(
             0, 0.624, 0.886)
         styleOpenSans.alignment = TA_CENTER
-        styleOpenSans.leading = 23
+        styleOpenSans.leading = 14
 
         #paragraph_string = u"<b style='line-height: 2'><i>{0}: {1}</i></b>".format(
         #    self.course, self.long_course.decode('utf-8'))
