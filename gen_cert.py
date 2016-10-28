@@ -593,7 +593,7 @@ class CertificateGen(object):
         styleOpenSans.textColor = colors.Color(
             0, 0.624, 0.886)
         styleOpenSans.alignment = TA_CENTER
-        styleOpenSans.leading = 15
+        styleOpenSans.leading = 23
 
         #paragraph_string = u"<b style='line-height: 2'><i>{0}: {1}</i></b>".format(
         #    self.course, self.long_course.decode('utf-8'))
