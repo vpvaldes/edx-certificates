@@ -597,7 +597,10 @@ class CertificateGen(object):
 
         #paragraph_string = u"<b style='line-height: 2'><i>{0}: {1}</i></b>".format(
         #    self.course, self.long_course.decode('utf-8'))
-        paragraph_string = u"<b style='line-height: 2'><i>{1}</i></b>".format(
+        #!important course name
+        #paragraph_string = u"<b style='line-height: 2'><i>{1}</i></b>".format(
+        #    self.course, self.long_course.decode('utf-8'))
+        paragraph_string = u"<b style='line-height: 2'><i>Arte y Espacio Público</i></b>".format(
             self.course, self.long_course.decode('utf-8'))
         paragraph = Paragraph(paragraph_string, styleOpenSans)
         # paragraph.wrapOn(c, WIDTH * mm, HEIGHT * mm)
