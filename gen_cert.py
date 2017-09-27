@@ -463,7 +463,7 @@ class CertificateGen(object):
 
         #paragraph_string = "Issued {0}".format(self.issued_date)
         #paragraph_string = "{0}".format(self.issued_date)
-        paragraph_string = "Santiago de Chile, a 14 de julio de 2017".format(self.issued_date)
+        paragraph_string = "Santiago de Chile, a 25 de septiembre de 2017".format(self.issued_date)
 
         # Right justified so we compute the width
         width = stringWidth(
@@ -630,7 +630,7 @@ class CertificateGen(object):
         #                   "<b>{1}</b> through <b>edX</b>.".format(
         #                       self.org, self.long_org.decode('utf-8'))
 
-        paragraph_string = "realizado entre el 6 de junio y el 11 de julio de 2017<br/><br/>" \
+        paragraph_string = "realizado entre el 15 de agosto y 21 de septiembre de 2017<br/><br/>" \
                            "en la plataforma UAbierta de la Universidad de Chile".format(
                                self.org, self.long_org.decode('utf-8'))
 
